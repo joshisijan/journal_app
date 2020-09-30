@@ -122,14 +122,10 @@ class Home extends StatelessWidget {
             boxShadow: index == active
                 ? [
                     BoxShadow(
-                      color: Theme.of(context)
-                          .textTheme
-                          .caption
-                          .color
-                          .withAlpha(150),
+                      color: Theme.of(context).textTheme.caption.color.withAlpha(150),
                       spreadRadius: 0.5,
-                      blurRadius: 5.0,
-                      offset: Offset(0, 5.0),
+                      blurRadius: 0.5,
+                      offset: Offset(0, 0.5),
                     ),
                   ]
                 : []),
@@ -157,7 +153,7 @@ class Home extends StatelessWidget {
               top: 10.0,
               left: 10.0,
               child: Container(
-                color: Theme.of(context).colorScheme.onPrimary.withAlpha(150),
+                color: Theme.of(context).cardColor.withAlpha(150),
                 padding: EdgeInsets.all(2.0),
                 child: Text(
                   children[index]['year'] ?? '',
@@ -169,7 +165,7 @@ class Home extends StatelessWidget {
               top: 40.0,
               left: 10.0,
               child: Container(
-                color: Theme.of(context).colorScheme.onPrimary.withAlpha(150),
+                color: Theme.of(context).cardColor.withAlpha(150),
                 padding: EdgeInsets.all(2.0),
                 child: Text(
                   children[index]['date'] ?? '',

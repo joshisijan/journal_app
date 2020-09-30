@@ -31,8 +31,8 @@ class ThemeProvider extends ChangeNotifier {
     },
     {
       'id': 2,
-      'name': 'blue',
-      'theme': kBlueTheme,
+      'name': 'light blue',
+      'theme': kLightBlueTheme,
     },
     {
       'id': 3,
@@ -43,6 +43,66 @@ class ThemeProvider extends ChangeNotifier {
       'id': 4,
       'name': 'pink',
       'theme': kPinkTheme,
+    },
+    {
+      'id': 5,
+      'name': 'deep purple',
+      'theme': kDeepPurpleTheme,
+    },
+    {
+      'id': 6,
+      'name': 'deep orange',
+      'theme': kDeepOrangeTheme,
+    },
+    {
+      'id': 7,
+      'name': 'lime',
+      'theme': kLimeTheme,
+    },
+    {
+      'id': 8,
+      'name': 'teal',
+      'theme': kTealTheme,
+    },
+    {
+      'id': 9,
+      'name': 'cyan',
+      'theme': kCyanTheme,
+    },
+    {
+      'id': 10,
+      'name': 'blue',
+      'theme': kBlueTheme,
+    },
+    {
+      'id': 11,
+      'name': 'indigo',
+      'theme': kIndigoTheme,
+    },
+    {
+      'id': 12,
+      'name': 'light green',
+      'theme': kLightGreenTheme,
+    },
+    {
+      'id': 13,
+      'name': 'brown',
+      'theme': kBrownTheme,
+    },
+    {
+      'id': 14,
+      'name': 'grey',
+      'theme': kGreyTheme,
+    },
+    {
+      'id': 15,
+      'name': 'amber',
+      'theme': kAmberTheme,
+    },
+    {
+      'id': 16,
+      'name': 'yellow',
+      'theme': kYellowTheme,
     },
   ];
 

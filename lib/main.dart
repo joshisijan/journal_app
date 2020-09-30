@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:journal_app/base.dart';
 import 'package:journal_app/providers/theme_provider.dart';
+import 'package:journal_app/providers/today_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,7 +22,12 @@ class MyApp extends StatelessWidget {
           theme: themeProvider.getTheme,
           home: PageStorage(
             bucket: _bucket,
-            child: AppBase(),
+            child: ChangeNotifierProvider(
+              create: (context) => TodayProvider(),
+              builder: (context, child){
+                return AppBase();
+              },
+            ),
           ),
         );
       },
