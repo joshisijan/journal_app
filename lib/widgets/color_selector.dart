@@ -33,7 +33,7 @@ class ColorSelector extends StatelessWidget {
                 color: themes[index]['theme'].primaryColor,
                 border: Border.all(
                   width: 5.0,
-                  color: active == index ? Theme.of(context).colorScheme.onPrimary : Theme.of(context).cardColor.withAlpha(100),
+                  color: active == index ? Theme.of(context).colorScheme.onPrimary.withAlpha(220) : Theme.of(context).cardColor.withAlpha(100),
                 ),
               ),
             ),

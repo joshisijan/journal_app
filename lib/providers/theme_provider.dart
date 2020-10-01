@@ -104,6 +104,16 @@ class ThemeProvider extends ChangeNotifier {
       'name': 'yellow',
       'theme': kYellowTheme,
     },
+    {
+      'id': 17,
+      'name': 'orange',
+      'theme': kOrangeTheme,
+    },
+    {
+      'id': 18,
+      'name': 'blue grey',
+      'theme': kBlueGreyTheme,
+    },
   ];
 
   //getters

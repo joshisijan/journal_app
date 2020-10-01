@@ -1,4 +1,7 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:journal_app/base.dart';
 import 'package:journal_app/providers/theme_provider.dart';
 import 'package:journal_app/providers/today_provider.dart';
@@ -9,29 +12,28 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final PageStorageBucket _bucket = PageStorageBucket();
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown
+    ]);
     return ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
-      builder: (context, child){
+      builder: (context, child) {
         var themeProvider = (context).watch<ThemeProvider>();
         return MaterialApp(
           title: 'Journal',
           debugShowCheckedModeBanner: false,
           theme: themeProvider.getTheme,
-          home: PageStorage(
-            bucket: _bucket,
-            child: ChangeNotifierProvider(
-              create: (context) => TodayProvider(),
-              builder: (context, child){
-                return AppBase();
-              },
-            ),
+          home: ChangeNotifierProvider(
+            create: (context) => TodayProvider(),
+            builder: (context, child) {
+              return AppBase();
+            },
           ),
         );
       },
     );
   }
 }
-
