@@ -13,33 +13,40 @@ class AppBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: (){
+      onWillPop: () {
         return showDialog(
-          context: context,
-          child: AlertDialog(
-            title: Text('Exit App'),
-            content: Text('Do you really want to exit the App?'),
-            actions: [
-              IconButton(
-                icon: Icon(Icons.check, color: Theme.of(context).primaryColorDark,),
-                onPressed: (){
-                  Navigator.of(context).pop(true);
-                },
+              context: context,
+              builder: (context) => AlertDialog(
+                title: Text('Exit App'),
+                content: Text('Do you really want to exit the App?'),
+                actions: [
+                  IconButton(
+                    icon: Icon(
+                      Icons.check,
+                      color: Theme.of(context).primaryColorDark,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop(true);
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.close,
+                      color: Theme.of(context).errorColor,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  ),
+                ],
               ),
-              IconButton(
-                icon: Icon(Icons.close, color: Theme.of(context).errorColor,),
-                onPressed: (){
-                  Navigator.of(context).pop(false);
-                },
-              ),
-            ],
-          ),
-        ) ?? false;
+            ) ??
+            false;
       },
       child: Scaffold(
         body: ChangeNotifierProvider(
           create: (context) => StoryProvider(),
-          builder: (context, child){
+          builder: (context, child) {
             return PageView(
               controller: _pageController,
               scrollDirection: Axis.horizontal,

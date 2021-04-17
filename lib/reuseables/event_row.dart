@@ -54,8 +54,8 @@ class EventRow extends StatelessWidget {
                   child: Text(
                     text,
                     style: Theme.of(context).textTheme.caption.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
                 ),
               ),
